@@ -1,0 +1,17 @@
+# Python cache & temporary files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Environment variables & secrets
+.env
+
+# VS Code settings
+.vscode/
+
+# Large binaries (optional: uncomment if model/scaler files are too large or regenerated dynamically)
+# *.pkl

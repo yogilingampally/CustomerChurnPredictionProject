@@ -1252,10 +1252,7 @@ elif page == "ℹ️ About Model":
         )
 
     with cta_col2:
-        st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
-        if st.button("Go to Predict Churn →"):
-            go_to("🔮 Predict Churn")
-            st.rerun()
+       st.info("👈 Use the sidebar menu to navigate to **Predict Churn**.")
 
     st.markdown(
         '<div class="section-title">Customer Churn Prediction</div>',

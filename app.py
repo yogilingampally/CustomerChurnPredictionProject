@@ -716,20 +716,7 @@ def predict_churn(
     probability = model.predict_proba(X_new)[0][1]
 
     return prediction, probability
-
-
-
-# =========================================================
-# SESSION STATE FOR PAGE NAVIGATION
-# =========================================================
-
-PAGES = ["🏠 Overview", "🔮 Predict Churn", "ℹ️ About Model"]
-
-if "page" not in st.session_state:
-    st.session_state.page = PAGES[0]
-
-def go_to(page_name):
-    st.session_state.page = page_name
+    
 
 
 # =========================================================
@@ -757,7 +744,7 @@ with st.sidebar:
 
     page = st.radio(
         "",
-        PAGES,
+        ["🏠 Overview", "🔮 Predict Churn", "ℹ️ About Model"],
         key="page",
         label_visibility="collapsed"
     )
@@ -793,7 +780,7 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-page = st.session_state.page
+
 
 
 # =========================================================
@@ -884,19 +871,7 @@ if page == "🏠 Overview":
             unsafe_allow_html=True
         )
 
-        btn_col1, btn_col2, _ = st.columns([1, 1, 2])
 
-        with btn_col1:
-            if st.button("Start Prediction →", type="primary"):
-                go_to("🔮 Predict Churn")
-                st.rerun()
-
-        with btn_col2:
-            st.markdown('<div class="secondary-btn">', unsafe_allow_html=True)
-            if st.button("Learn More"):
-                go_to("ℹ️ About Model")
-                st.rerun()
-            st.markdown('</div>', unsafe_allow_html=True)
 
     with hero_right:
         st.markdown(
